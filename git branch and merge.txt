@@ -1,0 +1,118 @@
+Microsoft Windows [Version 10.0.19042.1415]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\omkar>cd demo-repo
+
+C:\Users\omkar\demo-repo>git branch tryout
+
+C:\Users\omkar\demo-repo>git branch
+* main
+  tryout
+
+C:\Users\omkar\demo-repo>git checkout tryout
+Switched to branch 'tryout'
+
+C:\Users\omkar\demo-repo>git branch
+  main
+* tryout
+
+C:\Users\omkar\demo-repo>git add Account.cs
+
+C:\Users\omkar\demo-repo>git commit -m "Added a comment in Account.cs"
+[tryout cb065a4] Added a comment in Account.cs
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\omkar\demo-repo>git push -u origin tryout
+Enumerating objects: 28, done.
+Counting objects: 100% (28/28), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (28/28), 380.71 KiB | 20.04 MiB/s, done.
+Total 28 (delta 5), reused 21 (delta 3), pack-reused 0
+remote: Resolving deltas: 100% (5/5), done.
+remote:
+remote: Create a pull request for 'tryout' on GitHub by visiting:
+remote:      https://github.com/omkar-mulay/demo-repo/pull/new/tryout
+remote:
+To https://github.com/omkar-mulay/demo-repo.git
+ * [new branch]      tryout -> tryout
+Branch 'tryout' set up to track remote branch 'tryout' from 'origin'.
+
+C:\Users\omkar\demo-repo>git branch
+  main
+* tryout
+
+C:\Users\omkar\demo-repo>git pull
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), 1.38 KiB | 32.00 KiB/s, done.
+From https://github.com/omkar-mulay/demo-repo
+   4bb6049..3b54633  main       -> origin/main
+Already up to date.
+
+C:\Users\omkar\demo-repo>git merge tryout
+Already up to date.
+
+C:\Users\omkar\demo-repo>git branch
+  main
+* tryout
+
+C:\Users\omkar\demo-repo>git push -u origin main
+To https://github.com/omkar-mulay/demo-repo.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/omkar-mulay/demo-repo.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\omkar\demo-repo>git pull origin
+Already up to date.
+
+C:\Users\omkar\demo-repo>git checkout main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+C:\Users\omkar\demo-repo>git merge tryout
+Updating 4bb6049..cb065a4
+Fast-forward
+ Account.cs | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\omkar\demo-repo>git branch
+* main
+  tryout
+
+C:\Users\omkar\demo-repo>git push -u origin main
+To https://github.com/omkar-mulay/demo-repo.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/omkar-mulay/demo-repo.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\omkar\demo-repo>git pull origin
+Merge made by the 'ort' strategy.
+ Person.cs | 1 +
+ 1 file changed, 1 insertion(+)
+
+C:\Users\omkar\demo-repo>git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 387 bytes | 129.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/omkar-mulay/demo-repo.git
+   3b54633..b08387d  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+C:\Users\omkar\demo-repo>git push -u origin --delete tryout
+To https://github.com/omkar-mulay/demo-repo.git
+ - [deleted]         tryout
+
+C:\Users\omkar\demo-repo>
