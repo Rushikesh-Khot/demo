@@ -1,0 +1,13 @@
+1. Create maven web app
+2. Add deoendency - spring webmvc, spmring orm, hibernate core, mysql connector
+3. Add target runtime
+4. Making Dispatcher servlet as front controller
+5. Add the controller, DAO and entity 
+6. DAO - HibernateTemplate - performing operations
+7. create the views
+8. If views need JSTL, add dependency for JSTL
+9. generate bean definition file
+
+steps for managing transaction
+1. Add @Transactional  annotation above dao
+2. Add the entry of transactio manager in bean definitions
